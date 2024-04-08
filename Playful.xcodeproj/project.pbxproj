@@ -7,22 +7,62 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		BA278ABC2BC445DC00A7E340 /* PlayfulApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA278ABB2BC445DC00A7E340 /* PlayfulApp.swift */; };
-		BA278ABE2BC445DC00A7E340 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA278ABD2BC445DC00A7E340 /* ContentView.swift */; };
+		BA278ABC2BC445DC00A7E340 /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA278ABB2BC445DC00A7E340 /* App.swift */; };
 		BA278AC02BC445DE00A7E340 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BA278ABF2BC445DE00A7E340 /* Assets.xcassets */; };
 		BA278AC32BC445DE00A7E340 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BA278AC22BC445DE00A7E340 /* Preview Assets.xcassets */; };
+		BA278ACB2BC4465000A7E340 /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = BA278ACA2BC4465000A7E340 /* ComposableArchitecture */; };
+		BA278AD22BC4468D00A7E340 /* ScaleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA278AD12BC4468D00A7E340 /* ScaleButton.swift */; };
+		BA278AD62BC4479000A7E340 /* PlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA278AD52BC4479000A7E340 /* PlayerView.swift */; };
+		BA278AD92BC44D7500A7E340 /* RSSParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA278AD82BC44D7500A7E340 /* RSSParser.swift */; };
+		BA278AEA2BC44F4500A7E340 /* RSSParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA278AE92BC44F4500A7E340 /* RSSParserTests.swift */; };
+		BA278AEC2BC44FDA00A7E340 /* RSSDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA278AEB2BC44FDA00A7E340 /* RSSDownloader.swift */; };
+		BA278AEF2BC452BF00A7E340 /* AudioBook.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA278AEE2BC452BF00A7E340 /* AudioBook.swift */; };
+		BA278AF22BC4625600A7E340 /* ControlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA278AF12BC4625600A7E340 /* ControlView.swift */; };
+		BA278AF42BC4678700A7E340 /* PlaybackSpeedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA278AF32BC4678700A7E340 /* PlaybackSpeedView.swift */; };
+		BA278AF72BC4699000A7E340 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA278AF62BC4699000A7E340 /* Player.swift */; };
+		BA278AFB2BC4863100A7E340 /* PlayerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA278AFA2BC4863100A7E340 /* PlayerService.swift */; };
+		BA278AFD2BC48FF900A7E340 /* ViewPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA278AFC2BC48FF900A7E340 /* ViewPlayer.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		BA278AE22BC44F2600A7E340 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BA278AB02BC445DC00A7E340 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BA278AB72BC445DC00A7E340;
+			remoteInfo = Playful;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		BA278AB82BC445DC00A7E340 /* Playful.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Playful.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		BA278ABB2BC445DC00A7E340 /* PlayfulApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayfulApp.swift; sourceTree = "<group>"; };
-		BA278ABD2BC445DC00A7E340 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		BA278ABB2BC445DC00A7E340 /* App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
 		BA278ABF2BC445DE00A7E340 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BA278AC22BC445DE00A7E340 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		BA278AD12BC4468D00A7E340 /* ScaleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScaleButton.swift; sourceTree = "<group>"; };
+		BA278AD52BC4479000A7E340 /* PlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerView.swift; sourceTree = "<group>"; };
+		BA278AD82BC44D7500A7E340 /* RSSParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RSSParser.swift; sourceTree = "<group>"; };
+		BA278ADE2BC44F2600A7E340 /* PlayfulTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PlayfulTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		BA278AE92BC44F4500A7E340 /* RSSParserTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RSSParserTests.swift; sourceTree = "<group>"; };
+		BA278AEB2BC44FDA00A7E340 /* RSSDownloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RSSDownloader.swift; sourceTree = "<group>"; };
+		BA278AEE2BC452BF00A7E340 /* AudioBook.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioBook.swift; sourceTree = "<group>"; };
+		BA278AF12BC4625600A7E340 /* ControlView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlView.swift; sourceTree = "<group>"; };
+		BA278AF32BC4678700A7E340 /* PlaybackSpeedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaybackSpeedView.swift; sourceTree = "<group>"; };
+		BA278AF62BC4699000A7E340 /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
+		BA278AFA2BC4863100A7E340 /* PlayerService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerService.swift; sourceTree = "<group>"; };
+		BA278AFC2BC48FF900A7E340 /* ViewPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewPlayer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		BA278AB52BC445DC00A7E340 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BA278ACB2BC4465000A7E340 /* ComposableArchitecture in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BA278ADB2BC44F2600A7E340 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -36,6 +76,7 @@
 			isa = PBXGroup;
 			children = (
 				BA278ABA2BC445DC00A7E340 /* Playful */,
+				BA278ADF2BC44F2600A7E340 /* PlayfulTests */,
 				BA278AB92BC445DC00A7E340 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -44,6 +85,7 @@
 			isa = PBXGroup;
 			children = (
 				BA278AB82BC445DC00A7E340 /* Playful.app */,
+				BA278ADE2BC44F2600A7E340 /* PlayfulTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -51,9 +93,12 @@
 		BA278ABA2BC445DC00A7E340 /* Playful */ = {
 			isa = PBXGroup;
 			children = (
-				BA278ABB2BC445DC00A7E340 /* PlayfulApp.swift */,
-				BA278ABD2BC445DC00A7E340 /* ContentView.swift */,
-				BA278ABF2BC445DE00A7E340 /* Assets.xcassets */,
+				BA278AF52BC4698300A7E340 /* Player */,
+				BA278AD72BC44D6D00A7E340 /* Services */,
+				BA278AD42BC4477A00A7E340 /* Screens */,
+				BA278ACE2BC4467600A7E340 /* Common */,
+				BA278ACD2BC4466100A7E340 /* App */,
+				BA278ACC2BC4465900A7E340 /* Resouces */,
 				BA278AC12BC445DE00A7E340 /* Preview Content */,
 			);
 			path = Playful;
@@ -65,6 +110,108 @@
 				BA278AC22BC445DE00A7E340 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		BA278ACC2BC4465900A7E340 /* Resouces */ = {
+			isa = PBXGroup;
+			children = (
+				BA278ABF2BC445DE00A7E340 /* Assets.xcassets */,
+			);
+			path = Resouces;
+			sourceTree = "<group>";
+		};
+		BA278ACD2BC4466100A7E340 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				BA278ABB2BC445DC00A7E340 /* App.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		BA278ACE2BC4467600A7E340 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				BA278AED2BC452B700A7E340 /* Models */,
+				BA278AD32BC446DF00A7E340 /* Components */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		BA278ACF2BC4467E00A7E340 /* Button */ = {
+			isa = PBXGroup;
+			children = (
+				BA278AD02BC4468200A7E340 /* Styles */,
+			);
+			path = Button;
+			sourceTree = "<group>";
+		};
+		BA278AD02BC4468200A7E340 /* Styles */ = {
+			isa = PBXGroup;
+			children = (
+				BA278AD12BC4468D00A7E340 /* ScaleButton.swift */,
+			);
+			path = Styles;
+			sourceTree = "<group>";
+		};
+		BA278AD32BC446DF00A7E340 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				BA278ACF2BC4467E00A7E340 /* Button */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		BA278AD42BC4477A00A7E340 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				BA278AF02BC4624100A7E340 /* Player */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		BA278AD72BC44D6D00A7E340 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				BA278AD82BC44D7500A7E340 /* RSSParser.swift */,
+				BA278AEB2BC44FDA00A7E340 /* RSSDownloader.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		BA278ADF2BC44F2600A7E340 /* PlayfulTests */ = {
+			isa = PBXGroup;
+			children = (
+				BA278AE92BC44F4500A7E340 /* RSSParserTests.swift */,
+			);
+			path = PlayfulTests;
+			sourceTree = "<group>";
+		};
+		BA278AED2BC452B700A7E340 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				BA278AEE2BC452BF00A7E340 /* AudioBook.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		BA278AF02BC4624100A7E340 /* Player */ = {
+			isa = PBXGroup;
+			children = (
+				BA278AD52BC4479000A7E340 /* PlayerView.swift */,
+				BA278AF12BC4625600A7E340 /* ControlView.swift */,
+				BA278AF32BC4678700A7E340 /* PlaybackSpeedView.swift */,
+			);
+			path = Player;
+			sourceTree = "<group>";
+		};
+		BA278AF52BC4698300A7E340 /* Player */ = {
+			isa = PBXGroup;
+			children = (
+				BA278AF62BC4699000A7E340 /* Player.swift */,
+				BA278AFC2BC48FF900A7E340 /* ViewPlayer.swift */,
+				BA278AFA2BC4863100A7E340 /* PlayerService.swift */,
+			);
+			path = Player;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -83,9 +230,30 @@
 			dependencies = (
 			);
 			name = Playful;
+			packageProductDependencies = (
+				BA278ACA2BC4465000A7E340 /* ComposableArchitecture */,
+			);
 			productName = Playful;
 			productReference = BA278AB82BC445DC00A7E340 /* Playful.app */;
 			productType = "com.apple.product-type.application";
+		};
+		BA278ADD2BC44F2600A7E340 /* PlayfulTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BA278AE42BC44F2600A7E340 /* Build configuration list for PBXNativeTarget "PlayfulTests" */;
+			buildPhases = (
+				BA278ADA2BC44F2600A7E340 /* Sources */,
+				BA278ADB2BC44F2600A7E340 /* Frameworks */,
+				BA278ADC2BC44F2600A7E340 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BA278AE32BC44F2600A7E340 /* PBXTargetDependency */,
+			);
+			name = PlayfulTests;
+			productName = PlayfulTests;
+			productReference = BA278ADE2BC44F2600A7E340 /* PlayfulTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
@@ -100,6 +268,10 @@
 					BA278AB72BC445DC00A7E340 = {
 						CreatedOnToolsVersion = 15.2;
 					};
+					BA278ADD2BC44F2600A7E340 = {
+						CreatedOnToolsVersion = 15.2;
+						TestTargetID = BA278AB72BC445DC00A7E340;
+					};
 				};
 			};
 			buildConfigurationList = BA278AB32BC445DC00A7E340 /* Build configuration list for PBXProject "Playful" */;
@@ -111,11 +283,15 @@
 				Base,
 			);
 			mainGroup = BA278AAF2BC445DC00A7E340;
+			packageReferences = (
+				BA278AC92BC4465000A7E340 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */,
+			);
 			productRefGroup = BA278AB92BC445DC00A7E340 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				BA278AB72BC445DC00A7E340 /* Playful */,
+				BA278ADD2BC44F2600A7E340 /* PlayfulTests */,
 			);
 		};
 /* End PBXProject section */
@@ -130,6 +306,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		BA278ADC2BC44F2600A7E340 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -137,12 +320,37 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BA278ABE2BC445DC00A7E340 /* ContentView.swift in Sources */,
-				BA278ABC2BC445DC00A7E340 /* PlayfulApp.swift in Sources */,
+				BA278AD92BC44D7500A7E340 /* RSSParser.swift in Sources */,
+				BA278AEC2BC44FDA00A7E340 /* RSSDownloader.swift in Sources */,
+				BA278AD62BC4479000A7E340 /* PlayerView.swift in Sources */,
+				BA278AEF2BC452BF00A7E340 /* AudioBook.swift in Sources */,
+				BA278AD22BC4468D00A7E340 /* ScaleButton.swift in Sources */,
+				BA278AF42BC4678700A7E340 /* PlaybackSpeedView.swift in Sources */,
+				BA278AF22BC4625600A7E340 /* ControlView.swift in Sources */,
+				BA278AF72BC4699000A7E340 /* Player.swift in Sources */,
+				BA278AFB2BC4863100A7E340 /* PlayerService.swift in Sources */,
+				BA278AFD2BC48FF900A7E340 /* ViewPlayer.swift in Sources */,
+				BA278ABC2BC445DC00A7E340 /* App.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BA278ADA2BC44F2600A7E340 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BA278AEA2BC44F4500A7E340 /* RSSParserTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		BA278AE32BC44F2600A7E340 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BA278AB72BC445DC00A7E340 /* Playful */;
+			targetProxy = BA278AE22BC44F2600A7E340 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		BA278AC42BC445DE00A7E340 /* Debug */ = {
@@ -274,11 +482,14 @@
 				DEVELOPMENT_ASSET_PATHS = "\"Playful/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = Playful;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -286,9 +497,13 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.run.Playful;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -302,11 +517,14 @@
 				DEVELOPMENT_ASSET_PATHS = "\"Playful/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = Playful;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -314,9 +532,47 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.run.Playful;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		BA278AE52BC44F2600A7E340 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.run.PlayfulTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Playful.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Playful";
+			};
+			name = Debug;
+		};
+		BA278AE62BC44F2600A7E340 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.run.PlayfulTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Playful.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Playful";
 			};
 			name = Release;
 		};
@@ -341,7 +597,35 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+		BA278AE42BC44F2600A7E340 /* Build configuration list for PBXNativeTarget "PlayfulTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BA278AE52BC44F2600A7E340 /* Debug */,
+				BA278AE62BC44F2600A7E340 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		BA278AC92BC4465000A7E340 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/pointfreeco/swift-composable-architecture";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.9.2;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		BA278ACA2BC4465000A7E340 /* ComposableArchitecture */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BA278AC92BC4465000A7E340 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */;
+			productName = ComposableArchitecture;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = BA278AB02BC445DC00A7E340 /* Project object */;
 }

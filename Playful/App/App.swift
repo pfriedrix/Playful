@@ -8,10 +8,10 @@
 import SwiftUI
 
 @main
-struct PlayfulApp: App {
+struct Playful: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            PlayerView(store: ViewPlayer.default)
         }
     }
 }

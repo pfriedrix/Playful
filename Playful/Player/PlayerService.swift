@@ -15,11 +15,9 @@ final class PlayerService {
     private let session = AVAudioSession.sharedInstance()
     private let player = AVPlayer()
     
-    private let store: StoreOf<Player>
     private let viewStore: StoreOf<ViewPlayer>
     
     init(viewStore: StoreOf<ViewPlayer>) {
-        self.store = Player.default
         self.viewStore = viewStore
         
         bind()
@@ -43,6 +41,7 @@ final class PlayerService {
                     self?.player.pause()
                 case let .seek(to: time):
                     self?.player.seek(to: time, toleranceBefore: .zero, toleranceAfter: .zero)
+                default: break
                 }
             }
             .store(in: &cancellable)
@@ -50,27 +49,33 @@ final class PlayerService {
     
     private func bindObservers() {
         player.publisher(for: \.status)
-            .sink { [ weak self ] in self?.store.send(.status($0)) }
+            .sink { [ weak self ] in self?.viewStore.send(.player(.status($0))) }
             .store(in: &cancellable)
         
         player.publisher(for: \.timeControlStatus)
-            .sink { [ weak self ] in self?.store.send(.timeControlStatus($0)) }
+            .sink { 
+                [ weak self ] in self?.viewStore.send(.player(.timeControlStatus($0)))
+            }
             .store(in: &cancellable)
         
         player.publisher(for: \.reasonForWaitingToPlay)
-            .sink { [ weak self ] in self?.store.send(.reasonForWaitingToPlay($0)) }
+            .sink { [ weak self ] in self?.viewStore.send(.player(.reasonForWaitingToPlay($0))) }
             .store(in: &cancellable)
         
         player.publisher(for: \.rate)
-            .sink { [ weak self ] in self?.store.send(.rate($0)) }
+            .sink { [ weak self ] in self?.viewStore.send(.player(.rate($0))) }
             .store(in: &cancellable)
         
         player.publisher(for: \.volume)
-            .sink { [ weak self ] in self?.store.send(.volume($0)) }
+            .sink { [ weak self ] in self?.viewStore.send(.player(.volume($0))) }
+            .store(in: &cancellable)
+        
+        player.publisher(for: \.currentItem)
+            .sink { [ weak self ] in self?.viewStore.send(.playerItem($0)) }
             .store(in: &cancellable)
         
         player.addPeriodicTimeObserver(forInterval: .init(value: 1, timescale: 1), queue: .main) { [ weak self ] in
-            self?.store.send(.currentTime($0))
+            self?.viewStore.send(.player(.currentTime($0)))
         }
     }
 }

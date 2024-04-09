@@ -6,12 +6,32 @@
 //
 
 import SwiftUI
+import ComposableArchitecture
 
 @main
-struct Playful: App {
+struct PlayfulApp: App {
+    let store = Playful.default
+    
+    init() {
+        store.send(.start)
+    }
+    
     var body: some Scene {
         WindowGroup {
-            PlayerView(store: ViewPlayer.default)
+            WithViewStore(store, observe: { $0.tab }) { viewStore in
+                switch viewStore.state {
+                case .player:
+                    PlayerView(store: store)
+                        .transition(.move(edge: .trailing))
+                case .episodes:
+                    EpisodesView(store: store)
+                        .transition(.move(edge: .leading))
+                }
+            }
+            .overlay(alignment: .bottom) {
+                PageControl(store: store)
+                    .padding(.vertical)
+            }
         }
     }
 }

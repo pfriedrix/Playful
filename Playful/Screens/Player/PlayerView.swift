@@ -9,32 +9,53 @@ import SwiftUI
 import ComposableArchitecture
 
 struct PlayerView: View {
-    let store: StoreOf<ViewPlayer>
-    let player: PlayerService
+    let store: StoreOf<Playful>
     
-    init(store: StoreOf<ViewPlayer>) {
-        self.store = store
-        player = PlayerService(viewStore: store)
+    private struct ViewState: Equatable {
+        var cover: Data
+        var alert: AlertState<Playful.AlertAction>?
         
-        store.send(.start)
+        init(state: Playful.State) {
+            cover = state.cover
+            alert = state.alert
+        }
     }
     
     var body: some View {
-        WithViewStore(store, observe: { $0 }) { viewStore in
-            ControlView(store: store)
+        WithViewStore(store, observe: ViewState.init) { viewStore in
+            ZStack {
+                if viewStore.cover.isEmpty {
+                    ProgressView()
+                } else if let uiImage = UIImage(data: viewStore.cover) {
+                    Image(uiImage: uiImage)
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .padding()
+                }
+            }
+            .frame(minHeight: 0, maxHeight: .infinity)
+            VStack {
+                CaptionView(store: store)
+                    .frame(minHeight: 0, maxHeight: .infinity)
+                PlaybackView(store: store)
+                    .frame(minHeight: 0, maxHeight: .infinity)
+                ControlView(store: store)
+                    .frame(minHeight: 0, maxHeight: .infinity)
+                Color.clear
+                    .frame(minHeight: 0, maxHeight: .infinity)
+            }
+            .padding(.vertical)
+            .frame(minHeight: 0, maxHeight: .infinity, alignment: .top)
+            .alert(item: viewStore.binding(get: \.alert, send: .alert(.hide))) { _ in
+                if let alert = viewStore.alert {
+                    return Alert(alert, action: { _ in })
+                }
+                return Alert(title: Text("Error!"))
+            }
         }
     }
 }
 
 #Preview {
-    PlayerView(store: .init(initialState: ViewPlayer.State()) {
-        ViewPlayer()
-    })
+    PlayerView(store: Playful.default)
 }
-
-// Page Control
-// Control Media
-// PlaybackSpeed
-// Progress Bar (duration, current)
-// Chapter Info
-// Cover

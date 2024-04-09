@@ -18,7 +18,7 @@ struct AudioBook: Equatable {
     var episodes: [Episode] = []
 }
 
-struct Episode {
+struct Episode: Equatable {
     let title: String
     let link: URL
 }

@@ -17,20 +17,12 @@ class AudioBookParser: NSObject, XMLParserDelegate {
     private var currentLink: String = ""
     private var currentAuthor: String = ""
     private var imageURL: URL?
+    private var isParsingItem = false
     
     internal var audioBook: AudioBook?
     
     func parserDidStartDocument(_ parser: XMLParser) {
         audioBook = AudioBook()
-    }
-    
-    func parser(_ parser: XMLParser, didStartElement elementName: String, namespaceURI: String?, qualifiedName qName: String?, attributes attributeDict: [String : String] = [:]) {
-        currentElement = elementName
-        if elementName == "enclosure" {
-            currentLink = attributeDict["url"] ?? ""
-        } else if elementName == "itunes:image" {
-            imageURL = URL(string: attributeDict["href"] ?? "")
-        }
     }
 
     func parser(_ parser: XMLParser, foundCharacters string: String) {
@@ -44,8 +36,22 @@ class AudioBookParser: NSObject, XMLParserDelegate {
         }
     }
 
+    func parser(_ parser: XMLParser, didStartElement elementName: String, namespaceURI: String?, qualifiedName qName: String?, attributes attributeDict: [String : String] = [:]) {
+        currentElement = elementName
+        if elementName == "item" {
+            isParsingItem = true
+            currentTitle = ""
+            currentLink = ""
+        } else if elementName == "enclosure" && isParsingItem {
+            currentLink = attributeDict["url"] ?? ""
+        } else if elementName == "itunes:image" && !isParsingItem {
+            imageURL = URL(string: attributeDict["href"] ?? "")
+        }
+    }
+
     func parser(_ parser: XMLParser, didEndElement elementName: String, namespaceURI: String?, qualifiedName qName: String?) {
         if elementName == "item" {
+            isParsingItem = false
             if let linkURL = URL(string: currentLink) {
                 let episode = Episode(title: currentTitle.trimmingCharacters(in: .whitespacesAndNewlines), link: linkURL)
                 audioBook?.episodes.append(episode)

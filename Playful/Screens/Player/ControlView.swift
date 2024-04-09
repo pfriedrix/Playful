@@ -9,15 +9,19 @@ import SwiftUI
 import ComposableArchitecture
 
 struct ControlView: View {
-    let store: StoreOf<ViewPlayer>
+    let store: StoreOf<Playful>
     
     private struct ViewState: Equatable {
         var isLoading: Bool
         var player: Player.State
+        var index: Int
+        var episodes: Int
         
-        init(state: ViewPlayer.State) {
-            self.isLoading = state.isLoading
-            self.player = state.player
+        init(state: Playful.State) {
+            isLoading = state.isLoading
+            player = state.player
+            index = state.episode ?? 0
+            episodes = state.audiobook?.episodes.count ?? 0
         }
     }
     
@@ -25,10 +29,11 @@ struct ControlView: View {
         WithViewStore(store, observe: ViewState.init) { viewStore in
             HStack(spacing: 20) {
                 Button {
-                    store.send(.control(.prev))
+                    store.send(.previous)
                 } label: {
                     Image(systemName: "backward.end.fill")
                         .padding(4)
+                        .foregroundStyle(viewStore.index > 0 ? Color(uiColor: .label) : .gray)
                 }
                 .buttonStyle(.scale)
                 Button {
@@ -39,12 +44,12 @@ struct ControlView: View {
                 }
                 .buttonStyle(.scale)
                 ZStack {
-                    if viewStore.isLoading && viewStore.player.status == .readyToPlay {
+                    if viewStore.isLoading || viewStore.player.isLoading {
                         ProgressView()
-                    } else {
+                    } else  {
                         let status = viewStore.player.timeControlStatus == .paused
                         Button {
-                            store.send(.control(status ? .play : .pause))
+                            store.send(.player(status ? .play : .pause))
                         } label: {
                             Image(systemName: status ? "play.fill" : "pause.fill")
                                 .font(.largeTitle)
@@ -53,7 +58,7 @@ struct ControlView: View {
                         .buttonStyle(.scale)
                     }
                 }
-                .frame(width: 30)
+                .frame(width: 30, height: 30)
                 Button {
                     store.send(.forward(by: 10))
                 } label: {
@@ -62,14 +67,16 @@ struct ControlView: View {
                 }
                 .buttonStyle(.scale)
                 Button {
-                    store.send(.control(.next))
+                    store.send(.next)
                 } label: {
                     Image(systemName: "forward.end.fill")
                         .padding(4)
                 }
                 .buttonStyle(.scale)
+                .foregroundStyle(viewStore.index < viewStore.episodes ? Color(uiColor: .label) : .gray)
             }
             .font(.title2)
         }
+        .padding(.vertical)
     }
 }

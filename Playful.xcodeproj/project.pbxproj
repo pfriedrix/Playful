@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BA2721122BC580920016B160 /* PlaybackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA2721112BC580920016B160 /* PlaybackView.swift */; };
+		BA2721152BC5822A0016B160 /* CMTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA2721142BC5822A0016B160 /* CMTime.swift */; };
+		BA2721192BC5ABAB0016B160 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA2721182BC5ABAB0016B160 /* Player.swift */; };
+		BA27211B2BC5C2C50016B160 /* PlaybackSpeed.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA27211A2BC5C2C50016B160 /* PlaybackSpeed.swift */; };
+		BA27211D2BC5C7040016B160 /* CaptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA27211C2BC5C7040016B160 /* CaptionView.swift */; };
+		BA27211F2BC5E4210016B160 /* EpisodesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA27211E2BC5E4210016B160 /* EpisodesView.swift */; };
+		BA2721212BC5E6CE0016B160 /* PageControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA2721202BC5E6CE0016B160 /* PageControl.swift */; };
 		BA278ABC2BC445DC00A7E340 /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA278ABB2BC445DC00A7E340 /* App.swift */; };
 		BA278AC02BC445DE00A7E340 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BA278ABF2BC445DE00A7E340 /* Assets.xcassets */; };
 		BA278AC32BC445DE00A7E340 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BA278AC22BC445DE00A7E340 /* Preview Assets.xcassets */; };
@@ -14,14 +21,10 @@
 		BA278AD22BC4468D00A7E340 /* ScaleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA278AD12BC4468D00A7E340 /* ScaleButton.swift */; };
 		BA278AD62BC4479000A7E340 /* PlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA278AD52BC4479000A7E340 /* PlayerView.swift */; };
 		BA278AD92BC44D7500A7E340 /* RSSParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA278AD82BC44D7500A7E340 /* RSSParser.swift */; };
-		BA278AEA2BC44F4500A7E340 /* RSSParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA278AE92BC44F4500A7E340 /* RSSParserTests.swift */; };
 		BA278AEC2BC44FDA00A7E340 /* RSSDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA278AEB2BC44FDA00A7E340 /* RSSDownloader.swift */; };
 		BA278AEF2BC452BF00A7E340 /* AudioBook.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA278AEE2BC452BF00A7E340 /* AudioBook.swift */; };
 		BA278AF22BC4625600A7E340 /* ControlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA278AF12BC4625600A7E340 /* ControlView.swift */; };
-		BA278AF42BC4678700A7E340 /* PlaybackSpeedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA278AF32BC4678700A7E340 /* PlaybackSpeedView.swift */; };
-		BA278AF72BC4699000A7E340 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA278AF62BC4699000A7E340 /* Player.swift */; };
-		BA278AFB2BC4863100A7E340 /* PlayerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA278AFA2BC4863100A7E340 /* PlayerService.swift */; };
-		BA278AFD2BC48FF900A7E340 /* ViewPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA278AFC2BC48FF900A7E340 /* ViewPlayer.swift */; };
+		BA278AFD2BC48FF900A7E340 /* Playful.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA278AFC2BC48FF900A7E340 /* Playful.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +38,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		BA2721112BC580920016B160 /* PlaybackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaybackView.swift; sourceTree = "<group>"; };
+		BA2721142BC5822A0016B160 /* CMTime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CMTime.swift; sourceTree = "<group>"; };
+		BA2721182BC5ABAB0016B160 /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
+		BA27211A2BC5C2C50016B160 /* PlaybackSpeed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaybackSpeed.swift; sourceTree = "<group>"; };
+		BA27211C2BC5C7040016B160 /* CaptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaptionView.swift; sourceTree = "<group>"; };
+		BA27211E2BC5E4210016B160 /* EpisodesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodesView.swift; sourceTree = "<group>"; };
+		BA2721202BC5E6CE0016B160 /* PageControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageControl.swift; sourceTree = "<group>"; };
 		BA278AB82BC445DC00A7E340 /* Playful.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Playful.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA278ABB2BC445DC00A7E340 /* App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
 		BA278ABF2BC445DE00A7E340 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -43,14 +53,10 @@
 		BA278AD52BC4479000A7E340 /* PlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerView.swift; sourceTree = "<group>"; };
 		BA278AD82BC44D7500A7E340 /* RSSParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RSSParser.swift; sourceTree = "<group>"; };
 		BA278ADE2BC44F2600A7E340 /* PlayfulTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PlayfulTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		BA278AE92BC44F4500A7E340 /* RSSParserTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RSSParserTests.swift; sourceTree = "<group>"; };
 		BA278AEB2BC44FDA00A7E340 /* RSSDownloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RSSDownloader.swift; sourceTree = "<group>"; };
 		BA278AEE2BC452BF00A7E340 /* AudioBook.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioBook.swift; sourceTree = "<group>"; };
 		BA278AF12BC4625600A7E340 /* ControlView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlView.swift; sourceTree = "<group>"; };
-		BA278AF32BC4678700A7E340 /* PlaybackSpeedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaybackSpeedView.swift; sourceTree = "<group>"; };
-		BA278AF62BC4699000A7E340 /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
-		BA278AFA2BC4863100A7E340 /* PlayerService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerService.swift; sourceTree = "<group>"; };
-		BA278AFC2BC48FF900A7E340 /* ViewPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewPlayer.swift; sourceTree = "<group>"; };
+		BA278AFC2BC48FF900A7E340 /* Playful.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Playful.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,11 +78,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BA2721132BC5821B0016B160 /* Formatters */ = {
+			isa = PBXGroup;
+			children = (
+				BA2721142BC5822A0016B160 /* CMTime.swift */,
+			);
+			path = Formatters;
+			sourceTree = "<group>";
+		};
 		BA278AAF2BC445DC00A7E340 = {
 			isa = PBXGroup;
 			children = (
 				BA278ABA2BC445DC00A7E340 /* Playful */,
-				BA278ADF2BC44F2600A7E340 /* PlayfulTests */,
 				BA278AB92BC445DC00A7E340 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -131,6 +144,7 @@
 		BA278ACE2BC4467600A7E340 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				BA2721132BC5821B0016B160 /* Formatters */,
 				BA278AED2BC452B700A7E340 /* Models */,
 				BA278AD32BC446DF00A7E340 /* Components */,
 			);
@@ -178,18 +192,11 @@
 			path = Services;
 			sourceTree = "<group>";
 		};
-		BA278ADF2BC44F2600A7E340 /* PlayfulTests */ = {
-			isa = PBXGroup;
-			children = (
-				BA278AE92BC44F4500A7E340 /* RSSParserTests.swift */,
-			);
-			path = PlayfulTests;
-			sourceTree = "<group>";
-		};
 		BA278AED2BC452B700A7E340 /* Models */ = {
 			isa = PBXGroup;
 			children = (
 				BA278AEE2BC452BF00A7E340 /* AudioBook.swift */,
+				BA27211A2BC5C2C50016B160 /* PlaybackSpeed.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -199,7 +206,10 @@
 			children = (
 				BA278AD52BC4479000A7E340 /* PlayerView.swift */,
 				BA278AF12BC4625600A7E340 /* ControlView.swift */,
-				BA278AF32BC4678700A7E340 /* PlaybackSpeedView.swift */,
+				BA2721112BC580920016B160 /* PlaybackView.swift */,
+				BA27211C2BC5C7040016B160 /* CaptionView.swift */,
+				BA27211E2BC5E4210016B160 /* EpisodesView.swift */,
+				BA2721202BC5E6CE0016B160 /* PageControl.swift */,
 			);
 			path = Player;
 			sourceTree = "<group>";
@@ -207,9 +217,8 @@
 		BA278AF52BC4698300A7E340 /* Player */ = {
 			isa = PBXGroup;
 			children = (
-				BA278AF62BC4699000A7E340 /* Player.swift */,
-				BA278AFC2BC48FF900A7E340 /* ViewPlayer.swift */,
-				BA278AFA2BC4863100A7E340 /* PlayerService.swift */,
+				BA278AFC2BC48FF900A7E340 /* Playful.swift */,
+				BA2721182BC5ABAB0016B160 /* Player.swift */,
 			);
 			path = Player;
 			sourceTree = "<group>";
@@ -324,13 +333,17 @@
 				BA278AEC2BC44FDA00A7E340 /* RSSDownloader.swift in Sources */,
 				BA278AD62BC4479000A7E340 /* PlayerView.swift in Sources */,
 				BA278AEF2BC452BF00A7E340 /* AudioBook.swift in Sources */,
+				BA2721192BC5ABAB0016B160 /* Player.swift in Sources */,
+				BA2721212BC5E6CE0016B160 /* PageControl.swift in Sources */,
 				BA278AD22BC4468D00A7E340 /* ScaleButton.swift in Sources */,
-				BA278AF42BC4678700A7E340 /* PlaybackSpeedView.swift in Sources */,
+				BA27211B2BC5C2C50016B160 /* PlaybackSpeed.swift in Sources */,
+				BA2721152BC5822A0016B160 /* CMTime.swift in Sources */,
+				BA27211F2BC5E4210016B160 /* EpisodesView.swift in Sources */,
 				BA278AF22BC4625600A7E340 /* ControlView.swift in Sources */,
-				BA278AF72BC4699000A7E340 /* Player.swift in Sources */,
-				BA278AFB2BC4863100A7E340 /* PlayerService.swift in Sources */,
-				BA278AFD2BC48FF900A7E340 /* ViewPlayer.swift in Sources */,
+				BA278AFD2BC48FF900A7E340 /* Playful.swift in Sources */,
+				BA2721122BC580920016B160 /* PlaybackView.swift in Sources */,
 				BA278ABC2BC445DC00A7E340 /* App.swift in Sources */,
+				BA27211D2BC5C7040016B160 /* CaptionView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -338,7 +351,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BA278AEA2BC44F4500A7E340 /* RSSParserTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -549,12 +561,17 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.run.PlayfulTests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.pfriedrix.PlayfulTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Playful.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Playful";
 			};
 			name = Debug;
@@ -566,12 +583,17 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.run.PlayfulTests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.pfriedrix.PlayfulTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Playful.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Playful";
 			};
 			name = Release;

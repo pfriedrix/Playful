@@ -18,8 +18,6 @@ struct Player {
         var duration: CMTime = .zero
         var rate: PlaybackSpeed = .normal
         var isLoading = false
-        
-        let player = AVPlayer()
     }
     
     enum Action: Equatable {
@@ -37,11 +35,7 @@ struct Player {
     }
 
     @Dependency(\.continuousClock) var clock
-    let session = AVAudioSession.sharedInstance()
-    
-    init() {
-        try? session.setCategory(.playback, options: [.mixWithOthers, .allowBluetooth, .allowAirPlay])
-    }
+    @Dependency(\.player) var player
     
     var body: some ReducerOf<Player> {
         Reduce { state, action in
@@ -53,7 +47,7 @@ struct Player {
                 state.currentTime = .zero
                 let asset = AVAsset(url: url)
                 let item = AVPlayerItem(asset: asset)
-                state.player.replaceCurrentItem(with: item)
+                player.replaceCurrentItem(with: item)
                 return .run { sender in
                     do {
                         let duration = try await asset.load(.duration)
@@ -64,11 +58,11 @@ struct Player {
                 }
             case .play:
                 state.timeControlStatus = .playing
-                state.player.playImmediately(atRate: Float(state.rate.rawValue))
+                player.playImmediately(atRate: Float(state.rate.rawValue))
                 return .send(.startTimer)
             case .pause:
                 state.timeControlStatus = .paused
-                state.player.pause()
+                player.pause()
                 return .send(.cancelTimer)
             case let .seek(to: time):
                 let time = CMTimeMake(
@@ -76,7 +70,6 @@ struct Player {
                     timescale: 1
                 )
                 state.currentTime = time
-                let player = state.player
                 return .merge(
                     .run { send in
                         _ = await player.seek(to: time)
@@ -92,15 +85,13 @@ struct Player {
             case let .rate(rate):
                 state.rate = rate
                 if state.timeControlStatus == .playing {
-                    state.player.playImmediately(atRate: Float(rate.rawValue))
+                    player.playImmediately(atRate: Float(rate.rawValue))
                 }
                 return .none
             case let .currentTime(time):
                 state.currentTime = time.convertScale(1, method: .default)
                 return .none
             case .startTimer:
-                let player = state.player
-                
                 let timeUpdates = AsyncStream<CMTime> { continuation in
                     let timeObserver = player.addPeriodicTimeObserver(forInterval: .init(value: 1, timescale: 1), queue: .main) { time in
                         continuation.yield(time)

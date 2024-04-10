@@ -64,6 +64,7 @@ struct Playful {
     }
     
     @Dependency(\.downloader) var downloader
+    @Dependency(\.haptic) var haptic
     
     var body: some ReducerOf<Playful> {
         Scope(state: \.player, action: \.player) {
@@ -75,7 +76,9 @@ struct Playful {
                 switch action {
                 case .hide:
                     state.alert = nil
-                    return .none
+                    return .run { _ in
+                        await haptic(.light)
+                    }
                 }
             case .loaded:
                 state.isLoading = false
@@ -90,7 +93,9 @@ struct Playful {
                 return .send(.loaded)
             case let .tab(tab):
                 state.tab = tab
-                return .none
+                return .run { _ in
+                    await haptic(.light)
+                }
             case .start:
                 state.isLoading = true
                 return .run { state in
@@ -120,30 +125,64 @@ struct Playful {
                 return .none
             case let .backward(by: seconds):
                 let time = max(state.player.currentTime - CMTime(seconds: seconds, preferredTimescale: 1), .zero)
-                return .send(.player(.seek(to: time)))
+                return .merge(
+                    .send(.player(.seek(to: time))),
+                    .run { _ in
+                        await haptic(.light)
+                    }
+                )
             case let .forward(by: seconds):
                 let time = min(state.player.currentTime + CMTime(seconds: seconds, preferredTimescale: 1), state.player.duration)
-                return .send(.player(.seek(to: time)))
+                return .merge(
+                    .send(.player(.seek(to: time))),
+                    .run { _ in
+                        await haptic(.light)
+                    }
+                )
             case let .seeker(seconds):
                 let time = CMTimeMake(
                     value: Int64(max(0, min(seconds, state.player.duration.seconds))),
                     timescale: 1
                 )
                 state.player.currentTime = time
-                return .send(.player(.cancelTimer))
+                return .merge(
+                    .send(.player(.cancelTimer)),
+                    .run { _ in
+                        await haptic(.soft)
+                    }
+                )
             case .doneSeeking:
                 let time = state.player.currentTime
-                return .send(.player(.seek(to: time)))
+                return .merge(
+                    .send(.player(.seek(to: time))),
+                    .run { _ in
+                        await haptic(.medium)
+                    }
+                )
             case .next:
                 if let episode = state.episode {
-                    return .send(.section(episode + 1))
+                    return .merge(
+                        .send(.section(episode + 1)),
+                        .run { _ in
+                            await haptic(.light)
+                        }
+                    )
                 }
-                return .none
+                return .run { _ in
+                    await haptic(.light)
+                }
             case .previous:
                 if let episode = state.episode {
-                    return .send(.section(episode - 1))
+                    return .merge(
+                        .send(.section(episode - 1)),
+                        .run { _ in
+                            await haptic(.light)
+                        }
+                    )
                 }
-                return .none
+                return .run { _ in
+                    await haptic(.soft)
+                }
             case let .section(index):
                 if let audiobook = state.audiobook, 0...audiobook.episodes.count ~= index {
                     state.episode = index
@@ -163,6 +202,18 @@ struct Playful {
                 return .none
             case .player(.fail):
                 return .send(.failed(PlayfulError.failedAudio))
+            case .player(.play):
+                return .run { _ in
+                    await haptic(.light)
+                }
+            case .player(.pause):
+                return .run { _ in
+                    await haptic(.light)
+                }
+            case .player(.rate(_)):
+                return .run { _ in
+                    await haptic(.light)
+                }
             case .player(_): return .none
             }
             

@@ -43,6 +43,8 @@ struct EpisodesView: View {
                             }
                         }
                     }
+                    .padding(.vertical)
+                    .padding(.bottom, 50)
                 }
             }
         }

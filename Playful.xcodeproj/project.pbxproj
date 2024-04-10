@@ -14,6 +14,8 @@
 		BA27211D2BC5C7040016B160 /* CaptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA27211C2BC5C7040016B160 /* CaptionView.swift */; };
 		BA27211F2BC5E4210016B160 /* EpisodesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA27211E2BC5E4210016B160 /* EpisodesView.swift */; };
 		BA2721212BC5E6CE0016B160 /* PageControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA2721202BC5E6CE0016B160 /* PageControl.swift */; };
+		BA27212E2BC625090016B160 /* AudioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA27212D2BC625090016B160 /* AudioPlayer.swift */; };
+		BA2721302BC62DA50016B160 /* Haptic.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA27212F2BC62DA50016B160 /* Haptic.swift */; };
 		BA278ABC2BC445DC00A7E340 /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA278ABB2BC445DC00A7E340 /* App.swift */; };
 		BA278AC02BC445DE00A7E340 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BA278ABF2BC445DE00A7E340 /* Assets.xcassets */; };
 		BA278AC32BC445DE00A7E340 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BA278AC22BC445DE00A7E340 /* Preview Assets.xcassets */; };
@@ -35,6 +37,8 @@
 		BA27211C2BC5C7040016B160 /* CaptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaptionView.swift; sourceTree = "<group>"; };
 		BA27211E2BC5E4210016B160 /* EpisodesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodesView.swift; sourceTree = "<group>"; };
 		BA2721202BC5E6CE0016B160 /* PageControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageControl.swift; sourceTree = "<group>"; };
+		BA27212D2BC625090016B160 /* AudioPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayer.swift; sourceTree = "<group>"; };
+		BA27212F2BC62DA50016B160 /* Haptic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Haptic.swift; sourceTree = "<group>"; };
 		BA278AB82BC445DC00A7E340 /* Playful.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Playful.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA278ABB2BC445DC00A7E340 /* App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
 		BA278ABF2BC445DE00A7E340 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -169,6 +173,7 @@
 			children = (
 				BA278AD82BC44D7500A7E340 /* RSSParser.swift */,
 				BA278AEB2BC44FDA00A7E340 /* RSSDownloader.swift */,
+				BA27212F2BC62DA50016B160 /* Haptic.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -200,6 +205,7 @@
 			children = (
 				BA278AFC2BC48FF900A7E340 /* Playful.swift */,
 				BA2721182BC5ABAB0016B160 /* Player.swift */,
+				BA27212D2BC625090016B160 /* AudioPlayer.swift */,
 			);
 			path = Player;
 			sourceTree = "<group>";
@@ -284,6 +290,7 @@
 				BA278AEC2BC44FDA00A7E340 /* RSSDownloader.swift in Sources */,
 				BA278AD62BC4479000A7E340 /* PlayerView.swift in Sources */,
 				BA278AEF2BC452BF00A7E340 /* AudioBook.swift in Sources */,
+				BA2721302BC62DA50016B160 /* Haptic.swift in Sources */,
 				BA2721192BC5ABAB0016B160 /* Player.swift in Sources */,
 				BA2721212BC5E6CE0016B160 /* PageControl.swift in Sources */,
 				BA278AD22BC4468D00A7E340 /* ScaleButton.swift in Sources */,
@@ -291,6 +298,7 @@
 				BA2721152BC5822A0016B160 /* CMTime.swift in Sources */,
 				BA27211F2BC5E4210016B160 /* EpisodesView.swift in Sources */,
 				BA278AF22BC4625600A7E340 /* ControlView.swift in Sources */,
+				BA27212E2BC625090016B160 /* AudioPlayer.swift in Sources */,
 				BA278AFD2BC48FF900A7E340 /* Playful.swift in Sources */,
 				BA2721122BC580920016B160 /* PlaybackView.swift in Sources */,
 				BA278ABC2BC445DC00A7E340 /* App.swift in Sources */,

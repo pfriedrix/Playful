@@ -44,7 +44,6 @@ struct PlayerView: View {
                 Color.clear
                     .frame(minHeight: 0, maxHeight: .infinity)
             }
-            .padding(.vertical)
             .frame(minHeight: 0, maxHeight: .infinity, alignment: .top)
             .alert(item: viewStore.binding(get: \.alert, send: .alert(.hide))) { _ in
                 if let alert = viewStore.alert {

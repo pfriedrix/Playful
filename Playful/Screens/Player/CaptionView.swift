@@ -32,6 +32,8 @@ struct CaptionView: View {
                     Text(episode.title)
                         .font(.subheadline)
                         .multilineTextAlignment(.center)
+                        .lineLimit(2)
+                        .fixedSize(horizontal: false, vertical: true)
                 }
             }
             .padding()

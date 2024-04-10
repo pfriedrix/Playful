@@ -27,16 +27,6 @@
 		BA278AFD2BC48FF900A7E340 /* Playful.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA278AFC2BC48FF900A7E340 /* Playful.swift */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		BA278AE22BC44F2600A7E340 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BA278AB02BC445DC00A7E340 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = BA278AB72BC445DC00A7E340;
-			remoteInfo = Playful;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXFileReference section */
 		BA2721112BC580920016B160 /* PlaybackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaybackView.swift; sourceTree = "<group>"; };
 		BA2721142BC5822A0016B160 /* CMTime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CMTime.swift; sourceTree = "<group>"; };
@@ -52,7 +42,6 @@
 		BA278AD12BC4468D00A7E340 /* ScaleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScaleButton.swift; sourceTree = "<group>"; };
 		BA278AD52BC4479000A7E340 /* PlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerView.swift; sourceTree = "<group>"; };
 		BA278AD82BC44D7500A7E340 /* RSSParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RSSParser.swift; sourceTree = "<group>"; };
-		BA278ADE2BC44F2600A7E340 /* PlayfulTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PlayfulTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA278AEB2BC44FDA00A7E340 /* RSSDownloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RSSDownloader.swift; sourceTree = "<group>"; };
 		BA278AEE2BC452BF00A7E340 /* AudioBook.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioBook.swift; sourceTree = "<group>"; };
 		BA278AF12BC4625600A7E340 /* ControlView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlView.swift; sourceTree = "<group>"; };
@@ -65,13 +54,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				BA278ACB2BC4465000A7E340 /* ComposableArchitecture in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		BA278ADB2BC44F2600A7E340 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -98,7 +80,6 @@
 			isa = PBXGroup;
 			children = (
 				BA278AB82BC445DC00A7E340 /* Playful.app */,
-				BA278ADE2BC44F2600A7E340 /* PlayfulTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -246,24 +227,6 @@
 			productReference = BA278AB82BC445DC00A7E340 /* Playful.app */;
 			productType = "com.apple.product-type.application";
 		};
-		BA278ADD2BC44F2600A7E340 /* PlayfulTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = BA278AE42BC44F2600A7E340 /* Build configuration list for PBXNativeTarget "PlayfulTests" */;
-			buildPhases = (
-				BA278ADA2BC44F2600A7E340 /* Sources */,
-				BA278ADB2BC44F2600A7E340 /* Frameworks */,
-				BA278ADC2BC44F2600A7E340 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				BA278AE32BC44F2600A7E340 /* PBXTargetDependency */,
-			);
-			name = PlayfulTests;
-			productName = PlayfulTests;
-			productReference = BA278ADE2BC44F2600A7E340 /* PlayfulTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -276,10 +239,6 @@
 				TargetAttributes = {
 					BA278AB72BC445DC00A7E340 = {
 						CreatedOnToolsVersion = 15.2;
-					};
-					BA278ADD2BC44F2600A7E340 = {
-						CreatedOnToolsVersion = 15.2;
-						TestTargetID = BA278AB72BC445DC00A7E340;
 					};
 				};
 			};
@@ -300,7 +259,6 @@
 			projectRoot = "";
 			targets = (
 				BA278AB72BC445DC00A7E340 /* Playful */,
-				BA278ADD2BC44F2600A7E340 /* PlayfulTests */,
 			);
 		};
 /* End PBXProject section */
@@ -312,13 +270,6 @@
 			files = (
 				BA278AC32BC445DE00A7E340 /* Preview Assets.xcassets in Resources */,
 				BA278AC02BC445DE00A7E340 /* Assets.xcassets in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		BA278ADC2BC44F2600A7E340 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -347,22 +298,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		BA278ADA2BC44F2600A7E340 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		BA278AE32BC44F2600A7E340 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = BA278AB72BC445DC00A7E340 /* Playful */;
-			targetProxy = BA278AE22BC44F2600A7E340 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		BA278AC42BC445DE00A7E340 /* Debug */ = {
@@ -492,6 +428,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Playful/Preview Content\"";
+				DEVELOPMENT_TEAM = M95CCRL636;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = Playful;
@@ -507,7 +444,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.run.Playful;
+				PRODUCT_BUNDLE_IDENTIFIER = com.pfriedrix.Playful;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
@@ -527,6 +464,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Playful/Preview Content\"";
+				DEVELOPMENT_TEAM = M95CCRL636;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = Playful;
@@ -542,7 +480,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.run.Playful;
+				PRODUCT_BUNDLE_IDENTIFIER = com.pfriedrix.Playful;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
@@ -551,50 +489,6 @@
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
-			};
-			name = Release;
-		};
-		BA278AE52BC44F2600A7E340 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.pfriedrix.PlayfulTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
-				SUPPORTS_MACCATALYST = NO;
-				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
-				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Playful.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Playful";
-			};
-			name = Debug;
-		};
-		BA278AE62BC44F2600A7E340 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.pfriedrix.PlayfulTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
-				SUPPORTS_MACCATALYST = NO;
-				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
-				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Playful.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Playful";
 			};
 			name = Release;
 		};
@@ -615,15 +509,6 @@
 			buildConfigurations = (
 				BA278AC72BC445DE00A7E340 /* Debug */,
 				BA278AC82BC445DE00A7E340 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		BA278AE42BC44F2600A7E340 /* Build configuration list for PBXNativeTarget "PlayfulTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				BA278AE52BC44F2600A7E340 /* Debug */,
-				BA278AE62BC44F2600A7E340 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

@@ -71,6 +71,12 @@ struct Playful {
         }
         Reduce { state, action in
             switch action {
+            case let .alert(action):
+                switch action {
+                case .hide:
+                    state.alert = nil
+                    return .none
+                }
             case .loaded:
                 state.isLoading = false
                 return .none
@@ -149,26 +155,17 @@ struct Playful {
                     )
                 }
                 return .none
-           
             case .player(.currentTime):
                 guard state.player.duration.seconds > 0 else { return .none }
                 if state.player.currentTime.seconds.rounded() >= state.player.duration.seconds.rounded() {
-                    return .merge(
-                        .cancel(id: Player.PlayerID),
-                        .send(.next)
-                    )
+                    return .send(.next)
                 }
                 return .none
             case .player(.fail):
                 return .send(.failed(PlayfulError.failedAudio))
             case .player(_): return .none
-            case let .alert(action):
-                switch action {
-                case .hide:
-                    state.alert = nil
-                    return .none
-                }
             }
+            
         }
     }
 }

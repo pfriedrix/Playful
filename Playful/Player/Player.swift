@@ -10,7 +10,7 @@ import AVFoundation
 
 @Reducer
 struct Player {
-    static let PlayerID = "player"
+    static let ID = UUID()
     
     struct State: Equatable {
         var timeControlStatus: AVPlayer.TimeControlStatus = .paused
@@ -30,7 +30,7 @@ struct Player {
         case duration(CMTime)
         case rate(PlaybackSpeed)
         case loaded
-        case currentTime
+        case currentTime(CMTime)
         case cancelTimer
         case startTimer
         case fail
@@ -77,13 +77,12 @@ struct Player {
                 )
                 state.currentTime = time
                 let player = state.player
-                let status = state.timeControlStatus
-                return .run { sender in
-                    _ = await player.seek(to: time)
-                    if status == .playing {
-                        await sender(.startTimer)
+                return .merge(
+                    .run { send in
+                        _ = await player.seek(to: time)
+                        await send(.startTimer)
                     }
-                }
+                )
             case let .duration(time):
                 state.duration = time
                 return .send(.loaded)
@@ -96,18 +95,28 @@ struct Player {
                     state.player.playImmediately(atRate: Float(rate.rawValue))
                 }
                 return .none
-            case .currentTime:
-                state.currentTime = state.player.currentTime()
+            case let .currentTime(time):
+                state.currentTime = time.convertScale(1, method: .default)
                 return .none
             case .startTimer:
-                return .run { sender in
-                        while !Task.isCancelled {
-                            try await clock.sleep(for: .seconds(1))
-                            await sender.callAsFunction(.currentTime, animation: .default)
-                        }
+                let player = state.player
+                
+                let timeUpdates = AsyncStream<CMTime> { continuation in
+                    let timeObserver = player.addPeriodicTimeObserver(forInterval: .init(value: 1, timescale: 1), queue: .main) { time in
+                        continuation.yield(time)
                     }
-                    .cancellable(id: Player.PlayerID, cancelInFlight: true)
-            case .cancelTimer: return .cancel(id: Player.PlayerID)
+                    
+                    continuation.onTermination = { @Sendable  _ in
+                        player.removeTimeObserver(timeObserver)
+                    }
+                }
+
+                return .run { send in
+                    for await time in timeUpdates {
+                        await send(.currentTime(time))
+                    }
+                }.cancellable(id: Player.ID, cancelInFlight: true)
+            case .cancelTimer: return .cancel(id: Player.ID)
             }
         }
     }

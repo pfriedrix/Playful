@@ -71,9 +71,9 @@ struct ControlView: View {
                 } label: {
                     Image(systemName: "forward.end.fill")
                         .padding(4)
+                        .foregroundStyle(viewStore.index < viewStore.episodes ? Color(uiColor: .label) : .gray)
                 }
                 .buttonStyle(.scale)
-                .foregroundStyle(viewStore.index < viewStore.episodes ? Color(uiColor: .label) : .gray)
             }
             .font(.title2)
         }

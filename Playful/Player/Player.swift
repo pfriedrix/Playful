@@ -34,7 +34,6 @@ struct Player {
         case fail
     }
 
-    @Dependency(\.continuousClock) var clock
     @Dependency(\.player) var player
     
     var body: some ReducerOf<Player> {
@@ -69,11 +68,13 @@ struct Player {
                     value: Int64(max(0, min(time.value, state.duration.value))),
                     timescale: 1
                 )
+                state.isLoading = true
                 state.currentTime = time
                 return .merge(
                     .run { send in
                         _ = await player.seek(to: time)
-                        await send(.startTimer)
+                        await send(.loaded)
+                        await (send(.startTimer))
                     }
                 )
             case let .duration(time):

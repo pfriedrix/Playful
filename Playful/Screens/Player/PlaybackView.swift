@@ -54,7 +54,7 @@ struct PlaybackView: View {
                 }
             }
             .padding(.horizontal)
-            .opacity(viewStore.isLoading || viewStore.player.isLoading ? 0 : 1)
+            .opacity(viewStore.isLoading ? 0 : 1)
         }
     }
     
